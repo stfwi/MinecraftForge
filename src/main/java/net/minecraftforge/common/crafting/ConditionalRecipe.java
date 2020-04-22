@@ -91,7 +91,7 @@ public class ConditionalRecipe
             if (JSONUtils.hasField(json, "optional"))
                 if (!JSONUtils.isBoolean(json, "optional"))
                     throw new JsonSyntaxException("Invalid contitional recipe, the 'optional' field value must be Boolean (true/false).");
-                else if (JSONUtils.isBoolean(json, "optional"))
+                else if (JSONUtils.getBoolean(json, "optional"))
                     throw new UnmatchedOptionalRecipeException();
             return null;
         }
